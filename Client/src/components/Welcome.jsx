@@ -1,7 +1,10 @@
+
+import React , {useContext} from 'react';
 import { AiFillPlayCircle } from 'react-icons/ai';
 import {SiEthereum} from 'react-icons/si';
 import {BsInfoCircle} from'react-icons/bs';
 
+import { TransactionContext } from '../context/TransactionContext';
 import { Loader } from './';
 const commonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
 
@@ -20,6 +23,10 @@ const Input =({placeholder ,name,type,value,handleChange})=>(
 );
 
 const Welcome = () => {
+    //provide the name of context you want to access
+    const {value}= useContext(TransactionContext); 
+
+    console.log(value);
 
     const connectWallet = () =>{
     
@@ -88,10 +95,10 @@ const Welcome = () => {
                     </div>
 
                     <div className="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
-                        <input placeholder="Address To" name="AddressTo"type="Text"handleCgange={()=>{}}/> {/*basic call back funtion */}
-                        <input placeholder="Amount(ETH)" name="amount"type="number"handleCgange={()=>{}}/> {/*basic call back funtion */}
-                        <input placeholder="Keyword (Gif)" name="keyword"type="Text"handleCgange={()=>{}}/> {/*basic call back funtion */}
-                        <input placeholder="Enter Message" name="message"type="Text"handleCgange={()=>{}}/> {/*basic call back funtion */}
+                        <input placeholder="Address To" name="AddressTo"type="Text"handleChange={()=>{}}/> {/*basic call back funtion */}
+                        <input placeholder="Amount(ETH)" name="amount"type="number"handleChange={()=>{}}/> {/*basic call back funtion */}
+                        <input placeholder="Keyword (Gif)" name="keyword"type="Text"handleChange={()=>{}}/> {/*basic call back funtion */}
+                        <input placeholder="Enter Message" name="message"type="Text"handleChange={()=>{}}/> {/*basic call back funtion */}
 
                         <div className="h-[1px] w-full bg-gray-400 my-2"/>
                         {false ?(
