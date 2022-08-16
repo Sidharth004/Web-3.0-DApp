@@ -1,5 +1,5 @@
 
-import React , {useContext} from 'react';
+import React , {useContext} from 'react'; //import use context hook
 import { AiFillPlayCircle } from 'react-icons/ai';
 import {SiEthereum} from 'react-icons/si';
 import {BsInfoCircle} from'react-icons/bs';
@@ -23,15 +23,12 @@ const Input =({placeholder ,name,type,value,handleChange})=>(
 );
 
 const Welcome = () => {
-    //provide the name of context you want to access
-    const {value}= useContext(TransactionContext); 
+    /*provide the name of context you want to access */
+    const {connectWallet}= useContext(TransactionContext); 
 
-    console.log(value);
-
-    const connectWallet = () =>{
     
 
-    }
+    
 
     const handleSubmit = () =>{
 
